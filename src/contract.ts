@@ -10,5 +10,6 @@ export function handleSync(event: Sync): void {
     entity.index = event.transaction.index;
     entity.reserve0 = event.params.reserve0;
     entity.reserve1 = event.params.reserve1;
+    entity.address = event.address;
     entity.save();
 }
