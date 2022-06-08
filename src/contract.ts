@@ -5,7 +5,7 @@ import {
 import { SyncEntity } from "../generated/schema"
 
 export function handleSync(event: Sync): void {
-    let entity = new SyncEntity(event.transaction.from.toHex())
+    let entity = new SyncEntity(event.transaction.hash.toHex())
     entity.blockNumber = event.block.number;
     entity.index = event.transaction.index;
     entity.reserve0 = event.params.reserve0;

@@ -1,4 +1,4 @@
-type SyncEntity @entity {
+type SyncEntity @entity(immutable: true) {
   id: ID!
   blockNumber: BigInt!
   index: BigInt!
