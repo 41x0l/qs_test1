@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0x853ee4b2a13f8a742d64c8f088be7ba2131f670d"
       abi: Contract
+      startBlock: 15500000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -23,16 +24,6 @@ dataSources:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,uint256)
-          handler: handleApproval
-        - event: Burn(indexed address,uint256,uint256,indexed address)
-          handler: handleBurn
-        - event: Mint(indexed address,uint256,uint256)
-          handler: handleMint
-        - event: Swap(indexed address,uint256,uint256,uint256,uint256,indexed address)
-          handler: handleSwap
         - event: Sync(uint112,uint112)
           handler: handleSync
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
       file: ./src/contract.ts
